@@ -276,7 +276,7 @@ Clicking on the events give you more details, as to the requestor, was it succes
 - All details can be viewed by clicking on the event.
 
 
-##References and Links:<br>
+## References and Links:<br>
 - The Microsoft Intune documentation is an excellent guide for using Intune
 - https://learn.microsoft.com/en-us/mem/intune/
 - This is a visual guide to the enrollment of devices based on platforms

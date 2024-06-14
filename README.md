@@ -5,18 +5,17 @@ Welcome to my home lab setup! "Dashershomelab" I've created this environment to 
 ### Microsoft Enterprise Mobility + Security 
 
 <img align="center" src="assets/images/title.jpg" /><br/>
+### Enterprise Mobility + Security from Microsoft is a comprehensive suite designed to help organisations manage and secure their mobile devices, applications and data.
+### EMS integrates with Microsoft's cloud services and provides a range of tools for identity and access management, information protection and device management.</br>
 
-## Purpose
-My home lab serves as a hands-on environment for:
-- Learning networking concepts and technologies.
-- Practicing monitoring, prevention, and administration techniques.
-- integration of cloud services with on prem devices
+## This is a lab I am working on to understand the PIM ( Privileged Identiy and management )
+## While doing this lab we will touch up Entra ID, Intune, Purview and M365  and few other cloud services.
+
 <br> <br>
 <!--# Home Lab Setup-->
-- # Privileged Identity Management + Security
+# Privileged Identity Management + Security
 
   
-<b>This lab focuses on Privileged Identity Management + Security using Microsoft Entra and integral services</b><br>
 <b>As we all know Azure AD has been renamed as Entra and Entra ID and throughout this lab ill be referring as Entra ID.<br>
 
 ### Goal in this lab is to:

@@ -54,7 +54,7 @@ Welcome to my home lab setup! "Dashershomelab" I've created this environment to 
 - You need to be the domain admin to purchase the license.
 - You can go to the M365 Admin center by typing  https://Admin.microsoft.com
 - Once you open the M65 amin center home page, navigate to Billing on the left menu and you will see the purchase licenses menu. Click on that and you can purchase required licenses.
-- The one license we need id the EMS (Enterprise Mobility and Security) + E3 license.
+- The one license we need is the EMS (Enterprise Mobility and Security) + E3 license.
 - Once you purchase the license you will be able to use it by assigning it to a user.
 - There are two Variants EMS + E3 and EMS + E5 (I am using EMS + E3 Trial version ). 
 - The differences between E3 and E5 apart form the cost are:

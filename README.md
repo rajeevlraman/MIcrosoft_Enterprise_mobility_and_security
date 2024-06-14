@@ -80,7 +80,9 @@ Microsoft Intune (Microsoft endpoint manager)
 8. Secure Score
  
 ### Microsoft 365 admin center<br>
-You can enter by typing: https://admin.microsoft.com
+You can enter by typing: https://admin.microsoft.com<br>
+
+<img align="center" src="assets/images/Picture5.png" /><br>
 
 - When you first create an account with Microsoft Azure or M365 console an Entra ID is provisioned.
   - Entra ID as we know is the new name for Azure AD. So, from now on I’ll be referring to Azure and Azure AD as Entra and Entra ID respectively.
@@ -101,46 +103,87 @@ You can enter by typing: https://admin.microsoft.com
  
 By having a single place to authenticate we can automatically be able to use web services and mobile applications on our mobile devices or clients PCs, devices with multiple different operating systems.
 
+<img align="center" src="assets/images/Picture10.png" /><br>
+
+- Once the license is purchased we need to assign the license to a user.
+- Go to the users in M365 admin center and select the user and then select the licenses to assign and save.
+- I have assigned the licenses along with already assigned licenses to the admin.
+
+<img align="center" src="assets/images/Picture11.png" /><br>
+
 - Once the licenses are applied it will take a few minutes up to 30 minutes to complete licensing the user.
 - To view all the available admin center’s for the selected user with a proper license click on the all-admin centres on the left side menu
 
+<img align="center" src="assets/images/Picture12.png" /><br>
+
 ### Active Directory Synchronisation To Entra ID
+
 Since we all have a windows server on premises with Active Directory services running, it is important and more practical to sync our Active Directory to the Microsoft Entra ID. Microsoft has allowed this possible by providing a synchronisation tool. This tool syncs all users on prem and in the Cloud. Keep in mind that the built in users on Active Directory are not synced.
 I have my Active Directory services running on my windows server 2022. Since I created this server for a previous lab and the domain name is referring to a local domain (AD.DASHERSWINLAB.local), I may have some sort of issues syncing because of two different domain names. So, I have to perform some additional steps, which is a good learning process as it is possible to have different domain names in reality. Microsoft also has acknowledged this and provided some options, which you will see below.
+
+<img align="center" src="assets/images/Picture13.png" /><br>
 
 To make this happen follow the steps below.
 
 - Go to Microsoft download centre and download the Entra connect tool.(it’s still called Azure AD connect)
 https://download.microsoft.com/download/B/0/0/B00291D0-5A83-4DE7-86F5-980BC00DE05A/AzureADConnect.msi
+<br>
+<img align="center" src="assets/images/Picture14.png" /><br>
 
 - Then run the tool in your Windows server and install the tool.
+
+<img align="center" src="assets/images/Picture15.png" /><br>
+  
 - Agree to the terms and install it.
 - After installation run the tool.
 
+<img align="center" src="assets/images/Picture16.png" /><br>
+
 - You can use customize option or Express settings. I’ll use the express settings.
+
+<img align="center" src="assets/images/Picture6.png" /><br>
 
 - It asks you to login with Entra ID global admin account.
 - So Login with your Entra ID admin credentials.
 
+<img align="center" src="assets/images/Picture17.png" /><br>
+
 - My account is setup with MFA so it will ask me for Microsoft credentials
+
+<img align="center" src="assets/images/Picture18.png" /><br>
 
 - Once entered it will then ask for the approval from authenticator app.
 - Go to the authenticator app on the phone and key in the number and say yes.
 - After verification it will then allow the sign in to continue.
 
+<img align="center" src="assets/images/Picture19.png" /><br>
+
 - Now it asks you to login to the Active Directory domain administrator credentials.
 - Once you enter and press next it will continue to configure.
 
+<img align="center" src="assets/images/Picture20.png" /><br>
+
 - Check the box which says start synchronisation when configuration completes.
+
+<img align="center" src="assets/images/Picture21.png" /><br>
 
 - It presents with a warning about the UPN Domain suffix not matching the Entra ID domain suffix.
 - Its right because my on prem domain is a local one (AD.DASHERSWINLAB.local) it has to be (“XX.com”).
+
+<img align="center" src="assets/images/Picture22.png" /><br>
 
 - So, to fix this I can either enter a Domain I own, which I don’t, or you can add the suffix.com to the domain. 
 - So ill open the Active Directory Domains and Trust menu on my server.
 - This provides me an option to add alternate UPN Suffixes. 
 - I’ll go ahead and add “dasherswinlab.com” and “securedasher.onmicrosoft.com” to the list.
+
+<img align="center" src="assets/images/Picture23.png" /><br>
+
 - Also ill make sure the on prem users have the Alternate domains connected.
+
+<img align="center" src="assets/images/Picture25.png" /><br>
+
+<img align="center" src="assets/images/Picture8.png" /><br>
 
 - I’ll continue the installation of the connect tool and it and the warning slightly changes, and it gives me an option to continue without matching all UPN suffixes to verified domains.
 

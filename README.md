@@ -138,3 +138,143 @@ https://download.microsoft.com/download/B/0/0/B00291D0-5A83-4DE7-86F5-980BC00DE0
 
 - The Microsoft Entra Connect website has been updated recently, below is the older version with the link to the new Microsoft Entra Connect link. Click on it and it should take you to the new website.
 
+- This is the new updated Microsoft Entra Connect web page.
+- Click on the Connect sync option and it will provide details of the synchronisation between Active Directory and Entra ID. Also there are other options required for hybrid management.
+
+- We will use Privileged Identity management.
+- The use case of this is when a certain activity has to be carried out and it needs a admin role. 
+Yes a administrator can carry out this activity but some or most cases the admin is either not available or has a busy schedule. Also we want to have better security we as a best practice keep the admin roles inactive unless necessary. To cater to these situations we have junior admins or users who can be provided the admin privilege to carry out these activities. This process has to be very carefully administered and monitored, so that we don’t let the privilege escalation turn against our security practices. Microsoft Entra ID allows us to carry out this PIM (Privileged identity Management) in a controlled manner. There is a feature called just-in-time access which allows us to provide the escalation.<br>
+
+ Users, groups or Devices can be managed using PIM.
+
+- Just-in-time access
+	- Provide only just in time access to some services when required
+	- For example, a junior sys admin can get rights to manage user for a particular time slot.
+	- It can be enforced with MFA.
+	- The access needs to be justified by the user requesting it, or by the admin providing this access.
+	- These access and actions need to be notified to a system admin or management.
+	- The request can be either accepted or rejected.
+	- These actions are monitored and audited  and allows Auditing of these access by both user and admin.
+	- Prevent last admin removal, this is a safety measure which occurs by default without which no one will be able to make any changes.
+ 
+- Let’s provide a junior admin with permission to modify user settings as an example.
+- To check a user roles we can go to Microsoft Entra admin center.
+- Click on roles and admins.
+- You will be provided with the administrative roles present in Entra.
+
+- Clicking on the role will provide you the users assigned the role. As you can see the gloabal admin role assigned to user Rajeev raman.
+- Further clicking on the role settings provide you the details of the role, like the max duration its assigned, whether MFA is required and whether it needs to be approved, etc...
+
+- Lets check the user admin role. We can see its not currently assigned to anyone.
+
+- The role settings show the details which we can edit if required, say or example the time duration is 8 hours which is a way too long. We can reduce it to a more realistic 2 hours. 
+- It can be done by the user requesting as well, which is what well do.
+- Tick the required check boxes, I’ll tick “require justification on activation” and “require approval to activate”.
+- I’ll request MFA which is a best practice, as I am eager to see how it works.
+
+- Since require approval to activate is checked, we need to select an approver member.
+- Click on the Select approver(s) + and it will provide the available users.
+- I have selected the global admin Rajeev Raman , an ill click on update.
+
+Now we can see that it shows 1 member as approver and the details of the member.
+
+- Click on the Assignment tab and you can see by default a few values and options are preset.
+- We do not want to allow permanent eligible assignment and permanent active assignment as it will work against the security best practice.
+- Change the value to 6 months for expiration of eligible assignments.
+
+- Click on the Notification tab and find there are fields for email notification and who should get the notifications and for notifying additional members.
+- We pretty much leave them all checked.
+- Once done click update and its done.
+
+For this demo I’ll just create a junior admin with no roles assigned.
+
+- Go to Microsoft Entra admin center.
+- I’ll click on users / Roles and admins / all roles/ and select user administrator.
+- Then click on the + Add assignments option.
+- Select a member and in this case I’ll select junior admin.
+
+
+- After selecting a member, click on settings and it will show us the details.
+- Select the assignment type , which is “Eligible”. So the user can request when needed.
+- Click on assign and it will be assigned to junior admin.
+
+
+- Now if we click on the user administrator and assignments we can check.
+- Click on Eligible assignments and junior admin should be listed in there.
+- So now junior admin can login and request for a eligible role.
+
+You can also check this from the user profile in assigned roles.
+
+- Now that we have confirmed the junior admin has a eligible role assigned lets log in to Entra using junior admin credentials.
+
+
+After password change a first time login is initiated and a page welcomes the user.
+
+- After logging in the Azure portal is opened with available resources.
+
+- We’ll locate Microsoft Entra ID and click on it to open Entra admin options.
+- It opens all services and details locate the Privileged Identity Management.
+
+- Click on the privileged Identity Management card available down the page.
+- On this page we can find the option Activate just in time. Click on the Activate button.
+
+Since we have set up for a password change on login junior admin has to change his password.
+
+
+- It opens up the Microsoft Entra roles and, lets click on the Eligible Assignments.
+- We will find the User Administrator role available to activate, and the end time.
+Click on Activate.
+
+
+Since we requested MFA for this activation additional requirements window pops up.<br>
+
+Follow the prompts and once password is entered to sign in, the MFA window pops up.<br>
+
+- Since this is the first time the Authenticator app has to be installed and setup.
+- Just follow the prompts and complete the authentication.
+
+- Once the authentication is done you will be directed back to the activation of user administrator role.
+- Since it was set to 8 hours by default I’ll set it to 2 hours.
+- I’ll have to provide a reason for the role activation. I just entered “need to change user properties”.
+- Click on the activate button and you will be notified as waiting for approval. 
+
+- The Global admin Rajeev Raman receives a notification for role activation.
+- Now I’ll open the Privileged Identity Management option and click on approve requests.
+- There is a junior admin requesting for a user administrator role and given a reason.
+
+- This opens up a approve request for the junior admin.
+- I need to provide a justification for activating the role.
+- Then ill click on confirm
+
+
+- This approves the request to give junior admin the user administrator role for 2 hours.
+- If we go back to the junior admin login and check we can see the Active assignment should be populated with the role activated.
+- Now the junior admin can use the role to do what he intended to do.
+
+- Lets open users and choose an user Peter parker. This user has no contact details and so lets complete the details.
+Ill fill up the contact details and save the changes.
+
+Clicking on the user peter parker I can see the changes have taken place. This confirms that the role is working correctly as intended.
+
+- As I have no more changes to make ill go ahead and deactivate the role.
+- Deactivation does not have to be after the time, it is a best practice to deactivate it after the purpose is met.
+- Once I click on deactivate the deactivation process starts.
+
+After deactivation the role gets populated in Eligible assignments.
+
+- Since as accountability is a security requirement, these actions have to be logged.
+- We can go to the audit history in the Privileged Identity Management console and view the events.
+
+Clicking on the events give you more details, as to the requestor, was it successful, and the timestamp.
+
+- These logs can also be monitored by the admin in a different perspective.
+- All details can be viewed by clicking on the event.
+
+
+##References and Links:<br>
+- The Microsoft Intune documentation is an excellent guide for using Intune
+- https://learn.microsoft.com/en-us/mem/intune/
+- This is a visual guide to the enrollment of devices based on platforms
+- https://download.microsoft.com/download/e/6/2/e6233fdd-a956-4f77-93a5-1aa254ee2917/msft-intune-enrollment-options.pdf
+- This is a template for Intune deployment planning, design and implementation table.
+- https://download.microsoft.com/download/7/1/5/7151c8de-6b23-4aa7-8a63-a914844a5f1b/IDPDIG%20-%20Table%20templates.docx

@@ -36,6 +36,11 @@ My home lab serves as a hands-on environment for:
 - Open https://Portal.azure.com  and create an account.
 - Follow the instructions and register. You will get access to Azure portal with $200 credit for one month.
 - Once logged in with your Microsoft login credentials you will find the Azure Home page.
+
+<img align="center" src="assets/images/Picture1.png" /><br/>
+
+<img align="center" src="assets/images/Picture2.png" /><br/>
+
 - Click on the subscription and you will find the details.
 - you can also find cost analysis of the services and resources.
 - You can click on the Microsoft Entra ID, and it will take you to the Entra ID admin Centre.

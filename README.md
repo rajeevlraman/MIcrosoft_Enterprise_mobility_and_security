@@ -89,3 +89,52 @@ You can enter by typing: https://admin.microsoft.com
 	- The RBAC allows admins to set up junior administrators with various roles based on necessity and this avoids a global admin or admin with higher privileges active on the network. This is one of the best practices and provides only users and admins with least privilege active, providing additional security.<br>
  
 By having a single place to authenticate we can automatically be able to use web services and mobile applications on our mobile devices or clients PCs, devices with multiple different operating systems.
+
+- Once the licenses are applied it will take a few minutes up to 30 minutes to complete licensing the user.
+- To view all the available admin center’s for the selected user with a proper license click on the all-admin centres on the left side menu
+
+### Active Directory Synchronisation To Entra ID
+Since we all have a windows server on premises with Active Directory services running, it is important and more practical to sync our Active Directory to the Microsoft Entra ID. Microsoft has allowed this possible by providing a synchronisation tool. This tool syncs all users on prem and in the Cloud. Keep in mind that the built in users on Active Directory are not synced.
+I have my Active Directory services running on my windows server 2022. Since I created this server for a previous lab and the domain name is referring to a local domain (AD.DASHERSWINLAB.local), I may have some sort of issues syncing because of two different domain names. So, I have to perform some additional steps, which is a good learning process as it is possible to have different domain names in reality. Microsoft also has acknowledged this and provided some options, which you will see below.
+
+To make this happen follow the steps below.
+
+- Go to Microsoft download centre and download the Entra connect tool.(it’s still called Azure AD connect)
+https://download.microsoft.com/download/B/0/0/B00291D0-5A83-4DE7-86F5-980BC00DE05A/AzureADConnect.msi
+
+- Then run the tool in your Windows server and install the tool.
+- Agree to the terms and install it.
+- After installation run the tool.
+
+- You can use customize option or Express settings. I’ll use the express settings.
+
+- It asks you to login with Entra ID global admin account.
+- So Login with your Entra ID admin credentials.
+
+- My account is setup with MFA so it will ask me for Microsoft credentials
+
+- Once entered it will then ask for the approval from authenticator app.
+- Go to the authenticator app on the phone and key in the number and say yes.
+- After verification it will then allow the sign in to continue.
+
+- Now it asks you to login to the Active Directory domain administrator credentials.
+- Once you enter and press next it will continue to configure.
+
+- Check the box which says start synchronisation when configuration completes.
+
+- It presents with a warning about the UPN Domain suffix not matching the Entra ID domain suffix.
+- Its right because my on prem domain is a local one (AD.DASHERSWINLAB.local) it has to be (“XX.com”).
+
+- So, to fix this I can either enter a Domain I own, which I don’t, or you can add the suffix.com to the domain. 
+- So ill open the Active Directory Domains and Trust menu on my server.
+- This provides me an option to add alternate UPN Suffixes. 
+- I’ll go ahead and add “dasherswinlab.com” and “securedasher.onmicrosoft.com” to the list.
+- Also ill make sure the on prem users have the Alternate domains connected.
+
+- I’ll continue the installation of the connect tool and it and the warning slightly changes, and it gives me an option to continue without matching all UPN suffixes to verified domains.
+
+- Check the box and hit next and it will complete the configuration of Entra connect tool.
+- Now it completes the configuration successfully and asks you to verify the user accounts.
+
+- The Microsoft Entra Connect website has been updated recently, below is the older version with the link to the new Microsoft Entra Connect link. Click on it and it should take you to the new website.
+

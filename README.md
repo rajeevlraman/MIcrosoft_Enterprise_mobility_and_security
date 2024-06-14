@@ -2,18 +2,20 @@
 ## Overview
 Welcome to my home lab setup! "Dashershomelab" I've created this environment to learn and understand various aspects of networking, monitoring, prevention, administration, and hardening techniques. It's been an incredible learning experience, and I'm excited to share my setup with you.
 
-### Microsoft Enterprise Mobility + Security 
+## Microsoft Enterprise Mobility + Security 
 
 <img align="center" src="assets/images/title.jpg" /><br/>
-### Enterprise Mobility + Security from Microsoft is a comprehensive suite designed to help organisations manage and secure their mobile devices, applications and data.
-### EMS integrates with Microsoft's cloud services and provides a range of tools for identity and access management, information protection and device management.</br>
+Enterprise Mobility + Security from Microsoft is a comprehensive suite designed to help organisations manage and secure their mobile devices, applications and data.
 
-## This is a lab I am working on to understand the PIM ( Privileged Identiy and management )
-## While doing this lab we will touch up Entra ID, Intune, Purview and M365  and few other cloud services.
+EMS integrates with Microsoft's cloud services and provides a range of tools for identity and access management, information protection and device management.</br>
+
+This is a lab I am working on to understand the PIM ( Privileged Identiy and management )
+
+While doing this lab we will touch up Entra ID, Intune, Purview and M365  and few other cloud services.
 
 <br> <br>
 <!--# Home Lab Setup-->
-# Privileged Identity Management + Security
+## Privileged Identity Management + Security
 
   
 <b>As we all know Azure AD has been renamed as Entra and Entra ID and throughout this lab ill be referring as Entra ID.<br>
@@ -22,6 +24,18 @@ Welcome to my home lab setup! "Dashershomelab" I've created this environment to 
 - Understand Microsoft Cloud Administration
 - Microsoft Entra ID – (Azure AD)
 - Microsoft Privileged Identity Management (PIM)
+ 
+### Takeaway from this lab
+
+- Comprehensive hands-on experience in Microsoft Cloud Administration focusing on Entra and related services.
+- Learn Enterprise Mobility + Security (EMS) principles for managing and securing mobile devices, applications, and data in Microsoft's cloud ecosystem.
+- Focus on Privileged Identity Management (PIM) using Entra ID (formerly Azure AD) for effective role-based access control (RBAC) and just-in-time (JIT) access.
+- Practical skills in setting up Azure accounts, navigating the Azure portal, and managing subscriptions.
+- Setting up roles for Users and enforcing MFA.
+- Explore Active Directory synchronization with Entra ID using Entra Connect for seamless integration between on-premises and cloud environments.
+- Practical deployment and management of Microsoft Intune (Microsoft Endpoint Manager) for endpoint management, including device and application management.
+- Implement security measures with Defender for Cloud, Defender for Identity, and Purview Information Protection to enhance cloud workload security and compliance.
+- Creating Sensitivity labels for Office documents and setting up auto labelling and encryption.
 
 ### prerequisites for this lab:
 

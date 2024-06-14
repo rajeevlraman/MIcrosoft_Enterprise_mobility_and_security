@@ -351,47 +351,97 @@ Since we requested MFA for this activation additional requirements window pops u
 
 <img align="center" src="assets/images/Picture58.png" /><br>
 
+<img align="center" src="assets/images/Picture59.png" /><br>
+
 Follow the prompts and once password is entered to sign in, the MFA window pops up.<br>
+
+<img align="center" src="assets/images/Picture59.png" /><br>
 
 - Since this is the first time the Authenticator app has to be installed and setup.
 - Just follow the prompts and complete the authentication.
+
+<img align="center" src="assets/images/Picture60.png" /><br>
+
+<img align="center" src="assets/images/Picture61.png" /><br>
+
+<img align="center" src="assets/images/Picture62.png" /><br>
+
+<img align="center" src="assets/images/Picture63.png" /><br>
+
+<img align="center" src="assets/images/Picture64.png" /><br>
+
+<img align="center" src="assets/images/Picture65.png" /><br>
 
 - Once the authentication is done you will be directed back to the activation of user administrator role.
 - Since it was set to 8 hours by default I’ll set it to 2 hours.
 - I’ll have to provide a reason for the role activation. I just entered “need to change user properties”.
 - Click on the activate button and you will be notified as waiting for approval. 
 
+<img align="center" src="assets/images/Picture66.png" /><br>
+<img align="center" src="assets/images/Picture67.png" /><br>
+
 - The Global admin Rajeev Raman receives a notification for role activation.
 - Now I’ll open the Privileged Identity Management option and click on approve requests.
 - There is a junior admin requesting for a user administrator role and given a reason.
+
+<img align="center" src="assets/images/Picture68.png" /><br>
 
 - This opens up a approve request for the junior admin.
 - I need to provide a justification for activating the role.
 - Then ill click on confirm
 
+<img align="center" src="assets/images/Picture69.png" /><br>
+
+<img align="center" src="assets/images/Picture70.png" /><br>
 
 - This approves the request to give junior admin the user administrator role for 2 hours.
 - If we go back to the junior admin login and check we can see the Active assignment should be populated with the role activated.
 - Now the junior admin can use the role to do what he intended to do.
 
+<img align="center" src="assets/images/Picture75.png" /><br>
+
 - Lets open users and choose an user Peter parker. This user has no contact details and so lets complete the details.
 Ill fill up the contact details and save the changes.
 
+<img align="center" src="assets/images/Picture72.png" /><br>
+
 Clicking on the user peter parker I can see the changes have taken place. This confirms that the role is working correctly as intended.
+
+<img align="center" src="assets/images/Picture71.png" /><br>
+
+<img align="center" src="assets/images/Picture73.png" /><br>
+
+<img align="center" src="assets/images/Picture74.png" /><br>
 
 - As I have no more changes to make ill go ahead and deactivate the role.
 - Deactivation does not have to be after the time, it is a best practice to deactivate it after the purpose is met.
 - Once I click on deactivate the deactivation process starts.
 
+<img align="center" src="assets/images/Picture75.png" /><br>
+
+<img align="center" src="assets/images/Picture76.png" /><br>
+
+<img align="center" src="assets/images/Picture77.png" /><br>
+
 After deactivation the role gets populated in Eligible assignments.
 
-- Since as accountability is a security requirement, these actions have to be logged.
+<img align="center" src="assets/images/Picture78.png" /><br>
+
+- Since accountability is an Important security requirement, these actions have to be logged.
 - We can go to the audit history in the Privileged Identity Management console and view the events.
+
+<img align="center" src="assets/images/Picture79.png" /><br>
 
 Clicking on the events give you more details, as to the requestor, was it successful, and the timestamp.
 
+<img align="center" src="assets/images/Picture80.png" /><br>
+
 - These logs can also be monitored by the admin in a different perspective.
 - All details can be viewed by clicking on the event.
+
+<img align="center" src="assets/images/Picture81.png" /><br>
+
+<img align="center" src="assets/images/Picture82.png" /><br>
 
 
 ## References and Links:<br>

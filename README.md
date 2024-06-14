@@ -187,13 +187,27 @@ https://download.microsoft.com/download/B/0/0/B00291D0-5A83-4DE7-86F5-980BC00DE0
 
 - I’ll continue the installation of the connect tool and it and the warning slightly changes, and it gives me an option to continue without matching all UPN suffixes to verified domains.
 
+<img align="center" src="assets/images/Picture26.png" /><br>
+
+
 - Check the box and hit next and it will complete the configuration of Entra connect tool.
 - Now it completes the configuration successfully and asks you to verify the user accounts.
 
+<img align="center" src="assets/images/Picture27.png" /><br>
+
+<img align="center" src="assets/images/Picture30.png" /><br>
+
+<img align="center" src="assets/images/Picture31.png" /><br>
+
+
 - The Microsoft Entra Connect website has been updated recently, below is the older version with the link to the new Microsoft Entra Connect link. Click on it and it should take you to the new website.
+
+<img align="center" src="assets/images/Picture28.png" /><br>
 
 - This is the new updated Microsoft Entra Connect web page.
 - Click on the Connect sync option and it will provide details of the synchronisation between Active Directory and Entra ID. Also there are other options required for hybrid management.
+
+<img align="center" src="assets/images/Picture29.png" /><br>
 
 - We will use Privileged Identity management.
 - The use case of this is when a certain activity has to be carried out and it needs a admin role. 
@@ -216,61 +230,113 @@ Yes a administrator can carry out this activity but some or most cases the admin
 - Click on roles and admins.
 - You will be provided with the administrative roles present in Entra.
 
+<img align="center" src="assets/images/Picture32.png" /><br>
+
 - Clicking on the role will provide you the users assigned the role. As you can see the gloabal admin role assigned to user Rajeev raman.
 - Further clicking on the role settings provide you the details of the role, like the max duration its assigned, whether MFA is required and whether it needs to be approved, etc...
 
+<img align="center" src="assets/images/Picture33.png" /><br>
+
+<img align="center" src="assets/images/Picture34.png" /><br>
+
 - Lets check the user admin role. We can see its not currently assigned to anyone.
+
+<img align="center" src="assets/images/Picture35.png" /><br>
+
+<img align="center" src="assets/images/Picture36.png" /><br>
 
 - The role settings show the details which we can edit if required, say or example the time duration is 8 hours which is a way too long. We can reduce it to a more realistic 2 hours. 
 - It can be done by the user requesting as well, which is what well do.
 - Tick the required check boxes, I’ll tick “require justification on activation” and “require approval to activate”.
 - I’ll request MFA which is a best practice, as I am eager to see how it works.
 
+<img align="center" src="assets/images/Picture37.png" /><br>
+
 - Since require approval to activate is checked, we need to select an approver member.
 - Click on the Select approver(s) + and it will provide the available users.
 - I have selected the global admin Rajeev Raman , an ill click on update.
 
+<img align="center" src="assets/images/Picture38.png" /><br>
+
 Now we can see that it shows 1 member as approver and the details of the member.
+
+<img align="center" src="assets/images/Picture39.png" /><br>
 
 - Click on the Assignment tab and you can see by default a few values and options are preset.
 - We do not want to allow permanent eligible assignment and permanent active assignment as it will work against the security best practice.
 - Change the value to 6 months for expiration of eligible assignments.
 
+<img align="center" src="assets/images/Picture40.png" /><br>
+
 - Click on the Notification tab and find there are fields for email notification and who should get the notifications and for notifying additional members.
 - We pretty much leave them all checked.
 - Once done click update and its done.
 
+<img align="center" src="assets/images/Picture41.png" /><br>
+
 For this demo I’ll just create a junior admin with no roles assigned.
+
+<img align="center" src="assets/images/Picture42.png" /><br>
 
 - Go to Microsoft Entra admin center.
 - I’ll click on users / Roles and admins / all roles/ and select user administrator.
 - Then click on the + Add assignments option.
 - Select a member and in this case I’ll select junior admin.
 
+<img align="center" src="assets/images/Picture9.png" /><br>
 
 - After selecting a member, click on settings and it will show us the details.
 - Select the assignment type , which is “Eligible”. So the user can request when needed.
 - Click on assign and it will be assigned to junior admin.
+
+<img align="center" src="assets/images/Picture44.png" /><br>
+
+<img align="center" src="assets/images/Picture45.png" /><br>
 
 
 - Now if we click on the user administrator and assignments we can check.
 - Click on Eligible assignments and junior admin should be listed in there.
 - So now junior admin can login and request for a eligible role.
 
+<img align="center" src="assets/images/Picture46.png" /><br>
+
+<img align="center" src="assets/images/Picture47.png" /><br>
+
 You can also check this from the user profile in assigned roles.
 
-- Now that we have confirmed the junior admin has a eligible role assigned lets log in to Entra using junior admin credentials.
+<img align="center" src="assets/images/Picture45a.png" /><br>
 
+- Now that we have confirmed the junior admin has a eligible role assigned lets log in to Microsoft Entra admin center using junior admin credentials.
 
-After password change a first time login is initiated and a page welcomes the user.
+- Since we have set up for a password change on login junior admin has to change his password.
+
+<img align="center" src="assets/images/Picture48.png" /><br>
+
+<img align="center" src="assets/images/Picture49.png" /><br>
+
+<img align="center" src="assets/images/Picture50.png" /><br>
+
+- After password change a first time login is initiated and a page welcomes the user.
+
+<img align="center" src="assets/images/Picture51.png" /><br>
+
+<img align="center" src="assets/images/Picture52.png" /><br>
+
+<img align="center" src="assets/images/Picture53.png" /><br>
 
 - After logging in the Azure portal is opened with available resources.
+
+<img align="center" src="assets/images/Picture54.png" /><br>
 
 - We’ll locate Microsoft Entra ID and click on it to open Entra admin options.
 - It opens all services and details locate the Privileged Identity Management.
 
+<img align="center" src="assets/images/Picture55.png" /><br>
+
 - Click on the privileged Identity Management card available down the page.
 - On this page we can find the option Activate just in time. Click on the Activate button.
+
+<img align="center" src="assets/images/Picture56.png" /><br>
 
 Since we have set up for a password change on login junior admin has to change his password.
 
@@ -279,8 +345,11 @@ Since we have set up for a password change on login junior admin has to change h
 - We will find the User Administrator role available to activate, and the end time.
 Click on Activate.
 
+<img align="center" src="assets/images/Picture57.png" /><br>
 
 Since we requested MFA for this activation additional requirements window pops up.<br>
+
+<img align="center" src="assets/images/Picture58.png" /><br>
 
 Follow the prompts and once password is entered to sign in, the MFA window pops up.<br>
 

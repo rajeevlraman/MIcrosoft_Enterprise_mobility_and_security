@@ -43,7 +43,13 @@ My home lab serves as a hands-on environment for:
 
 - Click on the subscription and you will find the details.
 - you can also find cost analysis of the services and resources.
-- You can click on the Microsoft Entra ID, and it will take you to the Entra ID admin Centre.
+
+<img align="center" src="assets/images/Picture3.png" /><br>
+
+- You can click on the Microsoft Entra ID, and it will take you to the Entra ID admin Centre.<br>
+
+<img align="center" src="assets/images/Picture4.png" /><br>
+
 - Now to manage devices and users we need to buy a license.
 - These licenses can be purchased from either Entra admin center or Microsoft 365 Admin center.
 - You need to be the domain admin to purchase the license.
